@@ -1,1 +1,20 @@
-<h1>How to</h1>
+<% @recipe.each do |recip| %>
+<div class= "col-10 offset-1 header">
+  <h2>How to</h2>
+  <h1><%= recip.name %></h1>
+  <div class= "row">
+    <div class= "col-12 col-sm-4">
+      <%= image_tag 'pbh.jpg', class: 'img-fluid' %>
+    </div>
+    <div class="col-12 col-sm-7 offset-sm-1">
+    <h2 class="text-center">Ingredients</h2>
+    <% recip.ingredients.each do |i| %>
+    <h3><%= i %></h3>
+    <% end %>
+    <p><%= recip.details %></p>
+    </div>
+  </div>
+</div>
+
+<hr />
+<% end %>
